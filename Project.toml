@@ -2,8 +2,9 @@ name = "VMLS"
 uuid = "44dac47c-a70e-11e8-3cff-fbf5f1f7c554"
 license = "MIT"
 authors = ["Stephen Boyd <boyd@stanford.edu>", "Lieven Vandenberghe <vandenbe@ucla.edu"]
-version = "0.1.0"
+version = "0.2.0"
 
 [deps]
+DelimitedFiles = "8bb1440f-4735-579b-a4ab-409b98df4dab"
 LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
 SparseArrays = "2f01184e-e22b-5df5-ae63-d93ebab69eaf"

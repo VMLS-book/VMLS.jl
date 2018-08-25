@@ -6,11 +6,15 @@ module VMLS
 
 using LinearAlgebra
 using SparseArrays
+using DelimitedFiles
 export avg, rms, stdev, ang, correl_coef, eye, speye, kmeans, gram_schmidt
 export diagonal, spdiagonal, vandermonde, toeplitz, linspace
 export confusion_matrix, row_argmax, one_hot, mols_solve, cls_solve
 export levenberg_marquardt, aug_lag_method
-
+export house_sales_data, population_data, petroleum_consumption_data
+export vehicle_miles_data, temperature_data, iris_data, ozone_data
+export regularized_fit_data, portfolio_data, lq_estimation_data
+export orth_dist_reg_data
 
 """
     avg(x)
@@ -334,5 +338,31 @@ function aug_lag_method(f, Df, g, Dg, x1, lambda1;  kmax = 100,
     return x, z, Dict([ ("lm_iterations", lm_iters),  
          ("feas_res", feas_res), ("oc_res", oc_res), ("mus", mus) ])
 end
+
+
+
+
+"""
+    petroleum_consumption_data()
+
+Returns a 34-vector with the world annual petroleum consumption between 
+1980 and 2013, in thousand barrels/day (discussed on page 252).
+"""
+petroleum_consumption_data() = [ 
+    63122, 60953, 59551, 58785, 59795, 60083, 61819, 63107, 64978, 66090, 
+    66541, 67186, 67396, 67619, 69006, 70258, 71880, 73597, 74274, 75975, 
+    76928, 77732, 78457, 80089, 83063, 84558, 85566, 86724, 86046, 84972, 
+    88157, 89105, 90340, 91195 ]
+
+include("house_sales_data.jl")
+include("population_data.jl")
+include("vehicle_miles_data.jl")
+include("temperature_data.jl")
+include("iris_data.jl")
+include("ozone_data.jl")
+include("regularized_fit_data.jl")
+include("portfolio_data.jl")
+include("lq_estimation_data.jl")
+include("orth_dist_reg_data.jl")
 
 end # module

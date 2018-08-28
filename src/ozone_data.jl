@@ -6,7 +6,7 @@ at Azusa, California, during the first 14 days of July 2014
 (discussed on page 319). 
 """
 function ozone_data()
-# Hourly Ozone measurements in Azusa (www.arb.ca.gov/adam/hourly)
+# Hourly Ozone measurements in Azusa 
 # Values in parts per million;
 # Hourly 12am - 11pm; some measurements missing
 

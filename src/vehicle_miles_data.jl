@@ -29,8 +29,3 @@ vmt = [
 
 return vmt
 end
-
-#Source:  
-#"Unadjusted VMT - U.S. Department of Transportation, Federal Highways Administration, Traffic Volumes and Trends http://www.fhwa.dot.gov/policyinformation/travel_monitoring/tvt.cfm"
-#"Seasonally-adjusted VMT - U.S. Department of Transportation, Bureau of Transportation Statistics (BTS) calculation from U.S. Department of Transportation, Federal Highways Administration, Traffic Volumes and Trends http://www.fhwa.dot.gov/policyinformation/travel_monitoring/tvt.cfm"
-

@@ -1,6 +1,6 @@
 """
 A library of functions used in the Julia Companion to 
-**Vectors, Matrices, and Least Squares**.
+the book **Vectors, Matrices, and Least Squares**.
 """
 module VMLS
 
@@ -81,7 +81,7 @@ speye(n) = sparse(1.0I, n, n)
 
 Applies the k-means algorithm for `k` clusters to the vectors stored in `X`.
 
-The argument `X` is an n times N matrix or a one-dimensional array of N n-vectors.
+The argument `X` is a one-dimensional array of N n-vectors or an `n` times `N` matrix.
 
 `kmeans` returns a tuple with two elements: `assignment` is an array of N 
 integers between 1 and k with the cluster assignment for the N data points.
@@ -119,8 +119,9 @@ end
 """
     gram_schmidt(a; tol = 1e-10)
 
-Applies the Gram-Schmidt algorithm to the vector stored in the array `a` 
-and returns the result as an array of vectors.
+Applies the Gram-Schmidt algorithm to the vectors stored in the array `a` 
+and returns the result as an array of (orthonormal) vectors.  Issues a
+warning if the original vectors are linearly dependent.
 """
 function gram_schmidt(a; tol = 1e-10)
     q = []
@@ -141,7 +142,7 @@ end
 """
     diagonal(x)
 
-Returns a diagonal matrix with the vector `x` on its diagonal. 
+Returns a diagonal matrix with the entries of the vector `x` on its diagonal. 
 """
 diagonal(x) = diagm(0 => x)
 
@@ -149,7 +150,7 @@ diagonal(x) = diagm(0 => x)
 """
     spdiagonal(x)
 
-Returns a sparse diagonal matrix with the vector `x` on its diagonal. 
+Returns a sparse diagonal matrix with the entries of the vector `x` on its diagonal. 
 """
 spdiagonal(x) = spdiagm(0 => x)
 

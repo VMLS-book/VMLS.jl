@@ -160,7 +160,7 @@ spdiagonal(x) = spdiagm(0 => x)
 
 Returns the Vandermonde matrix with `n` columns and i-th column `t`^(i-1).
 """
-vandermonde(t,n) = hcat( [t.^i for i = 0:n-1]... )
+vandermonde(t,n) = hcat( [t.^i for i = 0:n-1]...; )
 
 
 """
@@ -244,8 +244,8 @@ array `bs`, and weights in the array `lambdas`.
 """
 function mols_solve(As,bs,lambdas)
     k = length(lambdas);
-    Atil = vcat([sqrt(lambdas[i])*As[i] for i=1:k]...)
-    btil = vcat([sqrt(lambdas[i])*bs[i] for i=1:k]...)
+    Atil = vcat([sqrt(lambdas[i])*As[i] for i=1:k]...;)
+    btil = vcat([sqrt(lambdas[i])*bs[i] for i=1:k]...;)
     return Atil \ btil
 end
 

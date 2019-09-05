@@ -1,5 +1,5 @@
 """
-    temperature_date()
+    temperature_data()
 
 Returns a vector of length 774 = 31*24 with the hourly temperature at LAX 
 in May 2016 (discussed on pages 259 and 266).

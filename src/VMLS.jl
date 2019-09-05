@@ -14,7 +14,7 @@ export levenberg_marquardt, aug_lag_method
 export house_sales_data, population_data, petroleum_consumption_data
 export vehicle_miles_data, temperature_data, iris_data, ozone_data
 export regularized_fit_data, portfolio_data, lq_estimation_data
-export orth_dist_reg_data
+export orth_dist_reg_data, wikipedia_data
 
 """
     avg(x)
@@ -365,5 +365,6 @@ include("regularized_fit_data.jl")
 include("portfolio_data.jl")
 include("lq_estimation_data.jl")
 include("orth_dist_reg_data.jl")
+include("wikipedia_data.jl")
 
 end # module

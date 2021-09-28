@@ -2,7 +2,7 @@ name = "VMLS"
 uuid = "44dac47c-a70e-11e8-3cff-fbf5f1f7c554"
 license = "MIT"
 authors = ["Stephen Boyd <boyd@stanford.edu>", "Lieven Vandenberghe <vandenbe@ucla.edu"]
-version = "0.3.0"
+version = "0.4.0"
 
 [deps]
 DelimitedFiles = "8bb1440f-4735-579b-a4ab-409b98df4dab"

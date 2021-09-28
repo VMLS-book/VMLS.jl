@@ -14,7 +14,7 @@ export levenberg_marquardt, aug_lag_method
 export house_sales_data, population_data, petroleum_consumption_data
 export vehicle_miles_data, temperature_data, iris_data, ozone_data
 export regularized_fit_data, portfolio_data, lq_estimation_data
-export orth_dist_reg_data, wikipedia_data
+export orth_dist_reg_data, wikipedia_data, k_nearest_neighbors
 
 """
     avg(x)
@@ -117,6 +117,28 @@ end
 
 
 """
+    k_nearest_neighbors(X, u, k) 
+
+Finds the k nearest neighbors of u in a collection of vectors X.
+
+The argument `X` is a one-dimensional array of N n-vectors or an `n` times `N` 
+matrix.  The argument `u` is an n-vector.
+
+Returns an array with the indices of the k nearest neighbors (indices in the 
+array X or column indices in the matrix X) and an array with the corresponding 
+distances, sorted in ascending order. 
+"""
+function k_nearest_neighbors(X, u, k)
+    if ndims(X) == 2
+        X = [ X[:,i] for i = 1:size(X,2) ]
+    end;
+    distances = [ norm(u-x) for x in X ]
+    ind = sortperm(distances)
+    return ind[1:k], distances[ind[1:k]]
+end
+
+
+"""
     gram_schmidt(a; tol = 1e-10)
 
 Applies the Gram-Schmidt algorithm to the vectors stored in the array `a` 
@@ -138,6 +160,7 @@ function gram_schmidt(a; tol = 1e-10)
     end;
     return q
 end
+
 
 """
     diagonal(x)
@@ -341,8 +364,6 @@ function aug_lag_method(f, Df, g, Dg, x1, lambda1;  kmax = 100,
 end
 
 
-
-
 """
     petroleum_consumption_data()
 
@@ -354,6 +375,7 @@ petroleum_consumption_data() = [
     66541, 67186, 67396, 67619, 69006, 70258, 71880, 73597, 74274, 75975, 
     76928, 77732, 78457, 80089, 83063, 84558, 85566, 86724, 86046, 84972, 
     88157, 89105, 90340, 91195 ]
+
 
 include("house_sales_data.jl")
 include("population_data.jl")
